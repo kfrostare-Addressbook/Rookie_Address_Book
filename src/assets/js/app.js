@@ -1,78 +1,93 @@
-const  storage = window.localStorage
+const storage = window.localStorage;
 
-const  renderContacts = () => {
-  const  contacts = JSON.parse(storage.getItem('contacts'))
+const renderContacts = () => {
+  const contacts = JSON.parse(storage.getItem("contacts"));
 
-  let  div = document.querySelector('#contact-list')
+  let div = document.querySelector("#contact-list");
   if (contacts) {
-	div.innerHTML = ''
-	const  ul = document.createElement('ul')
+    div.innerHTML = "";
+    const ul = document.createElement("ul");
 
-	contacts.forEach(contact  => {
-		let  li = document.createElement('li')
+    contacts.forEach(contact => {
+      let li = document.createElement("li");
 
-		li.innerHTML = `
+      li.innerHTML = `
 		  <span>${contact.name}</span> |
 		  <span>${contact.email}</span> |
 		  <span>${contact.phone}</span> |
-	    `
-	    ul.appendChild(li)
-	  })
-			
-	  div.appendChild(ul)
-	} else {
-	  div.innerHTML = '<p>You have no contacts in your address book</p>'
-	}
-}
+		  <span>${contact.company}</span> |
+		  <span>${contact.notes}</span> |
+		  <button class="remove-button" data-email=${contact.email}>Remove</button>
+	    `;
+	  
+		let buttons = li.querySelectorAll(".remove-button");
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          var contacts = JSON.parse(localStorage.contacts);
+          let newContacts = contacts.filter(
+            contact => contact.email !== event.target.dataset.email
+          );
+          storage.setItem("contacts", JSON.stringify(newContacts));
+          renderContacts();
+        });
+      });
 
-document.addEventListener('DOMContentLoaded', () => {
-	renderContacts()
-	const  contactForm = document.getElementById('new-contact-form')
-	const  toggleFormVisibilityButton = document.getElementById('add-contact')
-	contactForm.style.display = 'none'
- 
-	toggleFormVisibilityButton.addEventListener('click', () => {
-		if (contactForm.style.display === '') {
-			contactForm.style.display = 'none'
-		} else {
-			contactForm.style.display = ''
-		}
-	})
-	
-	contactForm.addEventListener('submit', event  => {
-		event.preventDefault()
-		
-		const { name, email, phone, company, notes } = contactForm.elements
-	})
-})
+      ul.appendChild(li);
+    });
 
-document.addEventListener('DOMContentLoaded', () => {
-	renderContacts()
-	const  contactForm = document.getElementById('new-contact-form')
-	contactForm.addEventListener('submit', event  => {
-		event.preventDefault()
+    div.appendChild(ul);
+  } else {
+    div.innerHTML = "<p>You have no contacts in your address book</p>";
+  }
+};
 
-		// 1. Read all the input fields and get their values
-		const { name, email, phone, company, notes } = contactForm.elements
+document.addEventListener("DOMContentLoaded", () => {
+  renderContacts();
+  const contactForm = document.getElementById("new-contact-form");
+  const toggleFormVisibilityButton = document.getElementById("add-contact");
+  contactForm.style.display = "none";
 
-		const  contact = {
-			name:  name.value,
-			email:  email.value,
-			phone:  phone.value,
-			company:  company.value,
-			notes:  notes.value,
-		}
+  toggleFormVisibilityButton.addEventListener("click", () => {
+    if (contactForm.style.display === "") {
+      contactForm.style.display = "none";
+    } else {
+      contactForm.style.display = "";
+    }
+  });
 
-		console.log(contact)
+  contactForm.addEventListener("submit", event => {
+    event.preventDefault();
 
-		let  contacts = JSON.parse(storage.getItem('contacts')) || []
+    const { name, email, phone, company, notes } = contactForm.elements;
+  });
+});
 
-		contacts.push(contact)
+document.addEventListener("DOMContentLoaded", () => {
+  renderContacts();
+  const contactForm = document.getElementById("new-contact-form");
+  contactForm.addEventListener("submit", event => {
+    event.preventDefault();
 
-		// 2. Save them to our storage
-		storage.setItem('contacts', JSON.stringify(contacts))
-		renderContacts()
-		contactForm.reset()
-   })
-})
+    // 1. Read all the input fields and get their values
+    const { name, email, phone, company, notes } = contactForm.elements;
 
+    const contact = {
+      name: name.value,
+      email: email.value,
+      phone: phone.value,
+      company: company.value,
+      notes: notes.value
+    };
+
+    console.log(contact);
+
+    let contacts = JSON.parse(storage.getItem("contacts")) || [];
+
+    contacts.push(contact);
+
+    // 2. Save them to our storage
+    storage.setItem("contacts", JSON.stringify(contacts));
+    renderContacts();
+    contactForm.reset();
+  });
+});
