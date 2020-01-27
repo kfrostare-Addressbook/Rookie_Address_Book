@@ -22,3 +22,10 @@ describe('user can create a contact', () => {
 	})
 })
 
+describe('user can create a contact', () => {
+	it('test', () => {
+		cy.get('#twitter').type('@thomasochman')
+		cy.get('#submit').click()
+	})
+})
+
