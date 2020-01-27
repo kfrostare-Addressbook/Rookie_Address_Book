@@ -4,7 +4,7 @@ describe('user can create a contact', () => {
 	})
 })
 
-describe('use can create a contact', () => {
+describe('user can create a contact', () => {
 	beforeEach('test', () => {
 		cy.visit('http://localhost:3001')
 		cy.get('#add-contact').click()
@@ -18,15 +18,10 @@ describe('user can create a contact', () => {
 		cy.get('#phone').type('0700 101010')
 		cy.get('#company').type('Craft Academy')
 		cy.get('#notes').type('Awesome coder')
-		cy.get('#twitter').type('@thomasochman')
 	})
 })
 
 describe('user can create a contact', () => {
-	beforeEach('test', () => {
-		cy.get('#twitter').type('@thomasochman')
-		cy.get('#submit').click()
-	})
 	beforeEach('displays a name of the new contact', () => {
 		cy.get('#contact-list').should('contain', 'Thomas')
 	})

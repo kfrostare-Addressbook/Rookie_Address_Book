@@ -14,7 +14,7 @@ const  renderContacts = () => {
 		li.innerHTML = `
 		  <span>${contact.name}</span> |
 		  <span>${contact.email}</span> |
-		  <span>${contact.phone}</span>
+		  <span>${contact.phone}</span> |
 	    `
 	    ul.appendChild(li)
 	  })
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	contactForm.addEventListener('submit', event  => {
 		event.preventDefault()
 		
-		const { name, email, phone, company, notes, twitter } = contactForm.elements
+		const { name, email, phone, company, notes } = contactForm.elements
 	})
 })
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		event.preventDefault()
 
 		// 1. Read all the input fields and get their values
-		const { name, email, phone, company, notes, twitter } = contactForm.elements
+		const { name, email, phone, company, notes } = contactForm.elements
 
 		const  contact = {
 			name:  name.value,
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			phone:  phone.value,
 			company:  company.value,
 			notes:  notes.value,
-			twitter:  twitter.value,
 		}
 
 		console.log(contact)
