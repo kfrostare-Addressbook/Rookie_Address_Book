@@ -1,0 +1,20 @@
+{
+  "name": "Address_Book_challenge",
+  "version": "1.0.0",
+  "description": "Address Book application",
+  "main": "src/app.js",
+  "repository": "https://github.com/kfrostare/Rookie_Address_Book.git",
+  "author": "Karro <karolina.frostare@gmail.com>",
+  "license": "MIT",
+  "private": null,
+  "devDependencies": {
+    "cypress": "^3.8.3"
+  },
+  "dependencies": {
+    "superstatic": "^6.0.4"
+  },
+  "scripts": {
+    "start": "superstatic src --port 3001",
+    "cy:open": "yarn start & cypress open"
+  }
+}
