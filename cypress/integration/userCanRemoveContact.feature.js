@@ -1,16 +1,8 @@
 describe('user can remove the contact', () => {
-	it('adds a contact and submits', () => {
-		cy.get('#name').type('Karro')
-		cy.get('#email').type('karro@craft.se')
-		cy.get('#phone').type('0700 102030')
-		cy.get('#company').type('Craft Academy')
-		cy.get('#notes').type('Not so Awesome coder')
-        cy.get('#submit').click()
-	})
-})
-
-describe('user can remove the contact', () => {
     it('clicks the remove button', () => {
-        cy.get('#remove-button').click()
+        cy.get('#contact-list').should('contain', 'Karro', '#remove-button').click()
+        cy.get('input[Karro]').should('not.exist')
+        cy.get('#contact-list').should('contain', 'Thomas')
+        cy.get('#contact-list').not('contain', 'Karro')
     	})
 })
