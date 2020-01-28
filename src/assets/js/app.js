@@ -17,7 +17,7 @@ const renderContacts = () => {
 		  <span>${contact.phone}</span> |
 		  <span>${contact.company}</span> |
 		  <span>${contact.notes}</span> |
-		  <button class="remove-button" data-email=${contact.email}>Remove</button>
+		  <button id="remove-button" button class="remove-button" data-email=${contact.email}>Remove</button>
 	    `;
 	  
 		let buttons = li.querySelectorAll(".remove-button");
