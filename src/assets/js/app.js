@@ -4,12 +4,12 @@ const renderContacts = () => {
   const contacts = JSON.parse(storage.getItem("contacts"));
 
   let div = document.querySelector("#contact-list");
-  if (contacts) {
-    div.innerHTML = "";
-    const ul = document.createElement("ul");
+    if (contacts) {
+      div.innerHTML = "";
+        const ul = document.createElement("ul");
 
-    contacts.forEach(contact => {
-      let li = document.createElement("li");
+      contacts.forEach(contact => {
+        let li = document.createElement("li");
 
       li.innerHTML = `
 		  <span>${contact.name}</span> |
@@ -17,10 +17,11 @@ const renderContacts = () => {
 		  <span>${contact.phone}</span> |
 		  <span>${contact.company}</span> |
 		  <span>${contact.notes}</span> |
+      <button id="edit-button" button class="edit-button">Edit</button>
       <button id="remove-button" button class="remove-button" data-email=${contact.email}>Remove</button>
-	    `;
-    
-		let buttons = li.querySelectorAll(".remove-button");
+      `;
+
+	let buttons = li.querySelectorAll(".remove-button");
       buttons.forEach(button => {
         button.addEventListener("click", () => {
           var contacts = JSON.parse(localStorage.contacts);
@@ -36,7 +37,7 @@ const renderContacts = () => {
     });
 
     div.appendChild(ul);
-  } else {
+  }   else {
     div.innerHTML = "<p>You have no contacts in your address book</p>";
   }
 };
