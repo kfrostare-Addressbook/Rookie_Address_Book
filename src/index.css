@@ -31,34 +31,33 @@ p   /*the text "you have no contacts.."*/
     display: block;
     text-align: center;
     border-radius: 5px;
-    color:;
     background-color: #C7B2A5;
     background: #EBEAEF;
 }
+.addButton:hover {background-color: #C7B2A5;} /*color for hovering over the button*/
+
 
 .saveButton
 {
     font-size: 15px;
     font-family: 'Courier New';
-    margin: 15px auto;
-    padding-top: 10px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: block;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
     text-align: center;
     color: antiquewhite;
     border-radius: 5px;
-    background-color: #7A4D35;
-    background: #A27D67;
-    
+    background-color: #A27D67;
 }
+.saveButton:hover {background-color: #7A4D35;} /*color for hovering over the button*/
+
 
 .form
 {
-    display: block;
+    display: inline-block;
     text-align: center;
-    margin: 2rem auto;
+    margin:;
     border: 2px solid #A27D67;
     padding: 2rem;
     width: 100%;
