@@ -9,18 +9,95 @@ html, body
     height: 100vh;
 }
 
+.contactList
+{
+    font-size: 20px;
+    font-family: 'Courier New';
+    color: white;
+    background: rgba(163,148,148,.9);
+
+    padding-top: 5px;
+    padding-bottom:15px;
+    padding-left: 30%;
+    padding-right:;
+
+    line-height: 15px;
+    text-align: left;
+
+}
+
+.edit-button
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-family: 'Courier New';
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 9px;
+    text-align: center;
+    color: antiquewhite;
+    border-radius: 5px;
+    background-color: #A27D67;
+    transition: .3s ease;
+
+}
+.edit-button:hover {background-color: #7A4D35;}
+
+.remove-button
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-family: 'Courier New';
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 9px;
+    text-align: center;
+    color: antiquewhite;
+    border-radius: 5px;
+    background-color: #A27D67;
+    transition: .3s ease;
+
+}
+.remove-button:hover {background-color: #7A4D35;}
+
 h1
 {
     line-height: 80px;
     font-family: 'Courier New';
-    font-size: 45px;
+    font-size: 50px;
     text-align: center;
     position: static;
     padding: 5px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin-left: ;
+    margin-right: ;
     border-radius: ;
-    color: white;
-    background: rgba(163,148,148,.6);
+    color: #7A4D35;
+    /* background: rgba(163,148,148,.6); */
 }
+
+.addButton
+{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: ;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 40px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    color: #7A4D35;
+    background: #EBEAEF;
+    transition: .3s ease;
+}
+.addButton:hover {background-color: #C7B2A5;} /*color for hovering over the button*/
+
 
 p   /*the text "you have no contacts.."*/
 {
@@ -31,55 +108,15 @@ p   /*the text "you have no contacts.."*/
     padding-bottom: 150px;
 }
 
-.contactList
-{
-    font-size: 17px;
-    font-family: 'Courier New';
-    padding-top: 10px;
-    padding-bottom: 5px;
-}
-
-.addButton
-{
-    font-size: 17px;
-    margin: 0px auto;
-    padding: 8px 15px;
-    display: block;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #C7B2A5;
-    background: #EBEAEF;
-    transition: .4s ease;
-}
-.addButton:hover {background-color: #C7B2A5;} /*color for hovering over the button*/
-
-
-.saveButton
-{
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 15px;
-    font-family: 'Courier New';
-    padding-top: 15px;
-    padding-bottom: 10px;
-    padding-left: 23px;
-    padding-right: 23px;
-    text-align: center;
-    color: antiquewhite;
-    border-radius: 5px;
-    background-color: #A27D67;
-    transition: .4s ease;
-}
-.saveButton:hover {background-color: #7A4D35;} /*color for hovering over the button*/
-
-
 .form
 {
-    margin-top: 150px;
+    margin-top: 330px;
     margin-left: ;
     margin-right: ;
+    margin-bottom: 150px;
     display: inline-block;
     text-align: center;
+    color: #7A4D35;
     background: rgba(163,148,148,.6);
     border-radius: 9px;
     max-width: 300px;
@@ -104,3 +141,21 @@ label   /*labels of the form*/
     font-size: 15px;
     font-family: 'Courier New';
 }
+
+.saveButton
+{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Courier New';
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 23px;
+    padding-right: 23px;
+    text-align: center;
+    color: antiquewhite;
+    border-radius: 5px;
+    background-color: #A27D67;
+    transition: .4s ease;
+}
+.saveButton:hover {background-color: #7A4D35;} /*color for hovering over the button*/
