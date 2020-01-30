@@ -11,10 +11,15 @@ html, body
 
 h1
 {
-    text-align: center;
-    padding-top: 150px;
+    line-height: 80px;
     font-family: 'Courier New';
-    font-size: 50px;
+    font-size: 45px;
+    text-align: center;
+    position: static;
+    padding: 5px;
+    border-radius: ;
+    color: white;
+    background: rgba(163,148,148,.6);
 }
 
 p   /*the text "you have no contacts.."*/
@@ -24,6 +29,14 @@ p   /*the text "you have no contacts.."*/
     font-size: 15px;
     padding-top: 15px;
     padding-bottom: 150px;
+}
+
+.contactList
+{
+    font-size: 17px;
+    font-family: 'Courier New';
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
 .addButton
@@ -62,12 +75,12 @@ p   /*the text "you have no contacts.."*/
 
 .form
 {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-left: ;
     margin-right: ;
     display: inline-block;
     text-align: center;
-    border: 2px solid #A27D67;
+    background: rgba(163,148,148,.6);
     border-radius: 9px;
     max-width: 300px;
     padding: 2rem;
