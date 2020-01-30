@@ -2,8 +2,11 @@ html, body
 {
     margin:0;
     background-image: url(./assets/css/bg01.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-attachment: fixed; /*important to fix the issue with image showing twice at the top*/
     background-repeat: no-repeat;
+    background-position: top center;
+    height: 100vh;
 }
 
 h1
@@ -33,12 +36,15 @@ p   /*the text "you have no contacts.."*/
     border-radius: 5px;
     background-color: #C7B2A5;
     background: #EBEAEF;
+    transition: .4s ease;
 }
 .addButton:hover {background-color: #C7B2A5;} /*color for hovering over the button*/
 
 
 .saveButton
 {
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 15px;
     font-family: 'Courier New';
     padding-top: 15px;
@@ -49,23 +55,39 @@ p   /*the text "you have no contacts.."*/
     color: antiquewhite;
     border-radius: 5px;
     background-color: #A27D67;
+    transition: .4s ease;
 }
 .saveButton:hover {background-color: #7A4D35;} /*color for hovering over the button*/
 
 
 .form
 {
+    margin-top: 100px;
+    margin-left: ;
+    margin-right: ;
     display: inline-block;
     text-align: center;
-    margin:;
     border: 2px solid #A27D67;
+    border-radius: 9px;
+    max-width: 300px;
     padding: 2rem;
-    width: 100%;
+    width: 50%;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 label   /*labels of the form*/
 {
+    margin-top: ;
+    margin-bottom: ;
+    margin-left: ;
+    margin-right: 25px;
     width: 85px;
     display: inline-block;
+    padding: 5px;
     text-align: center;
+    font-size: 15px;
+    font-family: 'Courier New';
 }
