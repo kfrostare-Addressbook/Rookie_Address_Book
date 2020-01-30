@@ -1,5 +1,6 @@
 const storage = window.localStorage;
 
+// Creates contact list from form
 const renderContacts = () => {
   const contacts = JSON.parse(storage.getItem("contacts"));
 
@@ -21,7 +22,7 @@ const renderContacts = () => {
       <button id="remove-button" button class="remove-button" data-email=${contact.email}>Remove</button>
       `;
      
-
+      // Creates an edit button for each contact in the contact list
       let editButtons = li.querySelectorAll(".edit-button");
       editButtons.forEach(button => {
         button.addEventListener("click", () => {
@@ -35,7 +36,7 @@ const renderContacts = () => {
       <input id="submit" type="submit" value="Update">
       </form>
 
-      `;
+      `;  // Assigns a value/id to each added contact
           const updateContact = document.getElementById("contact");
           updateContact.addEventListener("submit", event => {
             event.preventDefault();
@@ -64,6 +65,7 @@ const renderContacts = () => {
         });
       });
 
+      // Adds a remove button next to each added contact
       let buttons = li.querySelectorAll(".remove-button");
       buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -85,6 +87,7 @@ const renderContacts = () => {
   }
 };
 
+// Toggles the visibility of the form by clicking "ad contact"
 document.addEventListener("DOMContentLoaded", () => {
   renderContacts();
   const contactForm = document.getElementById("new-contact-form");
@@ -106,13 +109,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// Stores the contacts
 document.addEventListener("DOMContentLoaded", () => {
   renderContacts();
   const contactForm = document.getElementById("new-contact-form");
   contactForm.addEventListener("submit", event => {
     event.preventDefault();
 
-    // 1. Read all the input fields and get their values
+    // Read all the input fields and get their values
     const { name, email, phone, company, notes } = contactForm.elements;
 
     const contact = {
@@ -129,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     contacts.push(contact);
 
-    // 2. Save them to our storage
+    // Save contacts to storage (not working at the moment)
     storage.setItem("contacts", JSON.stringify(contacts));
     renderContacts();
     contactForm.reset();
