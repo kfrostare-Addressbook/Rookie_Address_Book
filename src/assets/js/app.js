@@ -83,7 +83,7 @@ const renderContacts = () => {
 
     div.appendChild(ul);
   } else {
-    div.innerHTML = "<p>you have no contacts in your address book </p>";
+    div.innerHTML = "<p>you have no contacts in your address book</p>";
   }
 };
 
