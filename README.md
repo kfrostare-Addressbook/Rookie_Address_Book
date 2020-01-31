@@ -1,6 +1,6 @@
 
 # The Address Book
-**week 4 of learning how to code.** Building a basic address book that saves contacts in LocalStorage using Javascript. Testing functions with Cypress and launching with Netify. [Visit and try out the address book for yourself.](https://rookieaddressbookbykarro.netlify.com/)
+**Week 4 of learning how to code.** Building a basic address book that saves contacts in LocalStorage using Javascript. Testing functions with Cypress and launching with Netify. [Visit and try out the address book for yourself.](https://rookieaddressbookbykarro.netlify.com/)
 
 *More information below the image.*
 ![The Address Book](src/assets/css/cover01.jpg)
